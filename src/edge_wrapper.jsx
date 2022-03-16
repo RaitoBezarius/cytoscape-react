@@ -1,8 +1,6 @@
-const React     = require('react');
-const ReactDOM  = require('react-dom');
+import React from 'react';
 
-
-class EdgeWrapper extends React.Component {
+export class EdgeWrapper extends React.Component {
     constructor () {
         super();
 
@@ -54,7 +52,10 @@ class EdgeWrapper extends React.Component {
             }).bind(this);
 
             props.cy.on('add', 'node', this._wait_for_missing_cb);
-        }
+        } else {
+		const edge = props.cy.getElementById(props.id);
+		edge.classes(props.canvasClassName || []);
+	}
     }
 
     render () {
@@ -70,14 +71,9 @@ class EdgeWrapper extends React.Component {
         }
 
         return (
-            <div className="cytoscape-react-edge">
+            <div className={`cytoscape-react-edge ${props.className}`}>
                 {props.children ? React.cloneElement(props.children, props) : null}
             </div>
         );
     }
 }
-
-
-module.exports = {
-    'EdgeWrapper': EdgeWrapper,
-};

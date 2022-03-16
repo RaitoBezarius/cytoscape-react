@@ -1,13 +1,13 @@
-const React     = require('react');
-const ReactDOM  = require('react-dom');
-const Cytoscape = require('cytoscape');
-const CyDomNode = require('cytoscape-dom-node');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Cytoscape from 'cytoscape';
+import CyDomNode from 'cytoscape-dom-node';
 
 
 Cytoscape.use(CyDomNode);
 
 
-class GraphWrapper extends React.Component {
+export class GraphWrapper extends React.Component {
     constructor () {
         super();
 
@@ -64,8 +64,3 @@ class GraphWrapper extends React.Component {
     graphElementDidUpdate (_el_component) {
     }
 }
-
-
-module.exports = {
-    'GraphWrapper': GraphWrapper,
-};

@@ -1,8 +1,6 @@
-const React     = require('react');
-const ReactDOM  = require('react-dom');
+import React from 'react';
 
-
-class Node extends React.Component {
+export class Node extends React.Component {
     componentDidMount () {
         let props = this.props;
 
@@ -21,8 +19,3 @@ class Node extends React.Component {
         return (<div className="cytoscape-react-node-default">{this.props.id}</div>);
     }
 }
-
-
-module.exports = {
-    'Node': Node,
-};

@@ -1,8 +1,7 @@
-const React     = require('react');
-const ReactDOM  = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-
-class NodeWrapper extends React.Component {
+export class NodeWrapper extends React.Component {
     componentDidMount () {
         let props = this.props;
 
@@ -30,15 +29,6 @@ class NodeWrapper extends React.Component {
     render () {
         let props = this.props;
 
-        return (
-            <div className="cytoscape-react-node">
-                {props.children ? React.cloneElement(props.children, props) : null}
-            </div>
-        );
+        return props.children ? React.cloneElement(props.children, props) : null;
     }
 }
-
-
-module.exports = {
-    'NodeWrapper': NodeWrapper,
-};
