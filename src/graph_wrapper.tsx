@@ -13,7 +13,7 @@ import CyDomNode from "cytoscape-dom-node";
 Cytoscape.use(CyDomNode);
 
 type Props = {
-  onCytoscapeReady: (cytoscape: any) => void;
+  onCytoscapeReady: (cytoscape: Cytoscape.Core) => void;
   children: ReactNode;
 };
 
